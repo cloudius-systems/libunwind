@@ -238,6 +238,8 @@ file_error:
 static int
 find_binary_for_address (unw_word_t ip, char *name, size_t name_size)
 {
+    /* Cloudius: we don't support /proc/self/maps */
+#if 0
 #ifdef __linux
   struct map_iterator mi;
   int found = 0;
@@ -259,6 +261,7 @@ find_binary_for_address (unw_word_t ip, char *name, size_t name_size)
       }
   maps_close (&mi);
   return !found;
+#endif
 #endif
 
   return 1;

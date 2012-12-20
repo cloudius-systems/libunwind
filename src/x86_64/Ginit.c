@@ -92,6 +92,8 @@ static int mincore_validate (void *addr, size_t len)
 HIDDEN void
 tdep_init_mem_validate (void)
 {
+    /* Cloudius: unneeded */
+#if 0
 #ifdef HAVE_MINCORE
   unsigned char present = 1;
   if (mincore (&present, 1, &present) == 0)
@@ -105,6 +107,7 @@ tdep_init_mem_validate (void)
       Debug(1, "using msync to validate memory\n");
       mem_validate_func = msync_validate;
     }
+#endif
 }
 
 /* Cache of already validated addresses */

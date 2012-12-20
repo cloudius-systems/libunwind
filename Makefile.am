@@ -31,7 +31,7 @@ endif
 
 nodist_include_HEADERS = include/libunwind-common.h
 
-SUBDIRS = src tests doc
+SUBDIRS = src
 
 noinst_HEADERS = include/dwarf.h include/dwarf_i.h include/dwarf-eh.h	\
 	include/libunwind_i.h include/mempool.h				\
